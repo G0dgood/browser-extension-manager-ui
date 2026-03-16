@@ -1,26 +1,115 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Neutral Colors */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-500: hsl(226, 14%, 52%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(217, 61%, 95%);
+  --neutral-50: hsl(200, 60%, 98%);
+  --neutral-0: hsl(0, 0%, 100%);
+
+  /* Red Colors */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --light-gradient: linear-gradient(135deg, #EBF2FC 0%, #EEF8F9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  /* Theme-specific Backgrounds/Foregrounds */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --page-bg: var(--light-gradient);
+
+  --card-bg: var(--neutral-0);
+  --card-border: hsl(217, 30%, 88%);
+  --card-text-primary: var(--neutral-900);
+  --card-text-secondary: var(--neutral-600);
+
+  --btn-primary-bg: var(--red-500);
+  --btn-primary-text: var(--neutral-0);
+  --btn-secondary-bg: var(--neutral-100);
+  --btn-secondary-text: var(--neutral-600);
 }
 
-@theme inline {
+.dark {
+  --background: hsl(227, 75%, 14%);
+  --foreground: hsl(0, 0%, 100%);
+  --page-bg: var(--dark-gradient);
+
+  /* Dark card: deep navy, slightly lighter than page bg */
+  --card-bg: hsl(226, 28%, 20%);
+  --card-border: hsl(226, 20%, 28%);
+  --card-text-primary: hsl(0, 0%, 100%);
+  --card-text-secondary: hsl(220, 12%, 70%);
+
+  --btn-primary-bg: var(--red-500);
+  --btn-primary-text: hsl(0, 0%, 100%);
+  --btn-secondary-bg: hsl(226, 20%, 28%);
+  --btn-secondary-text: hsl(220, 12%, 70%);
+}
+
+@theme {
+  --font-noto: var(--font-noto-sans);
+  --font-inter: 'Inter', sans-serif;
+
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-0: var(--neutral-0);
+
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-700: var(--red-700);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --bg-page: var(--page-bg);
+  --bg-card: var(--card-bg);
+  --border-card: var(--card-border);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--card-text-secondary);
+
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.05);
+
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
   }
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background: var(--background);
+  background: var(--page-bg);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans), 'Inter', sans-serif;
+  min-height: 100vh;
 }
