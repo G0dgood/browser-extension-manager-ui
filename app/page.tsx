@@ -39,8 +39,8 @@ export default function Home() {
         <Header />
 
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <h2 className="text-3xl font-bold tracking-tight text-[var(--foreground)]">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between text-center md:text-left">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--foreground)] ">
               Extensions List
             </h2>
             <FilterBar currentFilter={filter} onFilterChange={setFilter} />

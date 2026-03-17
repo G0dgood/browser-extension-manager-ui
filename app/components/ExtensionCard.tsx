@@ -17,14 +17,14 @@ export default function ExtensionCard({
   const { id, name, description, icon, isActive, color } = extension;
 
   return (
-    <div className="flex flex-col justify-between gap-6 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] !p-4 transition-all duration-300">
+    <div className="flex flex-col justify-between gap-6 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] !p-3 transition-all duration-300">
       {/* Top section: icon + name + description */}
       <div className="flex items-start gap-5">
         <div
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-          style={{ backgroundColor: color }}
+        // style={{ backgroundColor: color }}
         >
-          <Image src={icon} alt={name} width={36} height={36} className="h-9 w-9" />
+          <Image src={icon} alt={name} width={40} height={40} className="h-10 w-10" />
         </div>
         <div className="flex flex-col gap-1.5">
           <h3 className="text-lg font-bold text-[var(--foreground)] transition-colors">
